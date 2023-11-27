@@ -1,0 +1,20 @@
+openapi: 3.0.1
+info:
+  title: Health Check Service
+  version: 1.0.0
+paths:
+  /health:
+    get:
+      summary: Health Check Endpoint
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum: [healthy]
+                    description: Indicates the health status of the service.

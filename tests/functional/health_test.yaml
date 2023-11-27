@@ -1,0 +1,10 @@
+---
+- config:
+    - testset: "Health Check Tests"
+- test:
+    - name: "Health check test"
+    - url: "/health"
+    - method: "GET"
+    - expected_status: [200]
+    - validators:
+        - compare: {jsonpath_mini: "status", comparator: "eq", expected: "healthy"}
